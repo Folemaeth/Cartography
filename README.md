@@ -1,2 +1,2 @@
-# Mapping
+# Cartography
 Random map generator 
