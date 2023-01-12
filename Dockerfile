@@ -1,9 +1,8 @@
-FROM node:18-alpine
+FROM spritsail/alpine:3.8
+
 LABEL Description="Cartography development"
 
 WORKDIR /Cartography
 COPY . .
-RUN /bin/sh -c " apk add --update build-base; \
-    apk add --update cmake"
 
-
+RUN apk --no-cache add cmake make gcc g++
