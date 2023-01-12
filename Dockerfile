@@ -3,6 +3,7 @@ LABEL Description="Cartography development"
 
 WORKDIR /Cartography
 COPY . .
-RUN /bin/sh -c " apk add --update alpine-sdk"
+RUN /bin/sh -c " apk add --update build-base; \
+    apk add --update cmake"
 
 
