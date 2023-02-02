@@ -3,9 +3,9 @@ pkill Cartography
 
 rm -rf build
 mkdir build
-cd build
-cmake ..
-cmake --build .
-cp -rf ../templates ./templates
-xdg-open http://0.0.0.0:8080
-./Cartography
+cmake -S . -B ./build
+cmake --build ./build
+cp -rf ./templates ./build/templates
+xdg-open http://0.0.0.0:8080/main
+./build/Cartography
+

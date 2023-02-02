@@ -3,9 +3,11 @@
 
 int main () {
     crow::SimpleApp app;
-    CROW_ROUTE(app, "/")([](){
-        auto page = crow::mustache::load_text("startpage.html");
-        return page;
+    CROW_ROUTE(app, "/main")([](){
+        auto page = crow::mustache::load("base.html");
+        crow::mustache::context ctx;
+        ctx["title"] = "Cartography"; ctx["content"] = "Hello, world!";
+        return page.render(ctx);
     });
     app.port(8080).multithreaded().run();
 }
